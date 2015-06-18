@@ -10,9 +10,11 @@ import (
 var _ = Describe("Temp", func() {
 	Describe("Create", func() {
 		It("", func() {
-			f, err := Create()
+			file := new(File)
+			file.SetDir("test1/")
+			_, err := file.Create()
 			Expect(err).To(BeNil())
-			Expect(f.Name()).To(Equal("temp123"))
+			file.CleanUp()
 		})
 	})
 })
